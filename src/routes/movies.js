@@ -1,3 +1,5 @@
+//  /movie routes
+
 // const {
 //     Op,
 // } = require("sequelize");

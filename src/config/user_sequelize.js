@@ -1,3 +1,5 @@
+//  sequelize definition of the user table
+
 const {
     Sequelize,
     Op,

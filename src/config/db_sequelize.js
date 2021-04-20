@@ -1,3 +1,5 @@
+// sequelize object of the database
+
 const {
     Sequelize,
     Op,

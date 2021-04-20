@@ -1,3 +1,4 @@
+//  older attempt to use db using SQL queries
 const Pool = require('pg').Pool;
 
 const pool = new Pool({

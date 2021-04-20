@@ -1,4 +1,5 @@
 //  get the routes from different files
+
 const movie_routes = require('./movies');
 const login_routes = require('./login');
 const booking_routes = require('./booking');

@@ -1,3 +1,5 @@
+// older attempt to make routes using SQL query
+
 const pool = require("../config/db_pool");
 
 const routes = [

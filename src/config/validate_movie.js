@@ -1,3 +1,4 @@
+//  validate movie object using JOI
 const Joi = require('joi');
 
 const movieSchema = Joi.object({

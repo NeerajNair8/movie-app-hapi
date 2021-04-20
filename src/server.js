@@ -1,10 +1,8 @@
 const Hapi = require('hapi');
 const hapiAuthCookie = require('hapi-auth-cookie');
-
-//const Movies = require('./config/db2_sequelize');
 const routes = require('./routes/routes');
-// console.log('\n\nserver.js', routes,'\n\n');
 
+//  create server
 const server = new Hapi.Server();
 server.connection({
     host: "localhost",
@@ -15,6 +13,7 @@ server.connection({
 const init = async () => {
     await server.register(hapiAuthCookie);
 
+    // authentication strategy 
     server.auth.strategy('restricted', 'cookie', {
         password: 'randomPasswordSomehowReaching32Chars',
         cookie: 'session',

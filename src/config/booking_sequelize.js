@@ -1,4 +1,4 @@
-//  sequelize definition of the movie table
+//  sequelize definition of the booking table
 
 const {
     Sequelize,
@@ -8,28 +8,19 @@ const {
 } = require('sequelize');
 const sequelize = require('./db_sequelize');
 
-const Movies = sequelize.define('Movies', {
+const Bookings = sequelize.define('Bookings', {
     // Model attributes 
-    movie_id: {
+    book_id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
-    movie_name: {
+    user_email: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    details: {
-        type: DataTypes.STRING
-    },
-    seats: {
-        type: DataTypes.INTEGER
-    },
-    available: {
-        type: DataTypes.INTEGER
-    }
 }, {
-    tableName: 'movies',
+    tableName: 'bookings',
     timestamps: false,
 });
 
@@ -37,8 +28,8 @@ const init = async () => {
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
-        await Movies.sync();
-        console.log("The table for the Movies was just (re)created!");
+        await Bookings.sync();
+        console.log("The table for the Bookings was just (re)created!");
         // console.log(`\n\n, ${Movies},\n\n`)
     } catch (error) {
         console.error('Unable to connect to the database:', error);
@@ -48,4 +39,4 @@ const init = async () => {
 init();
 
 // console.log('movie_sequelize.js', Movies);
-module.exports = Movies
+module.exports = Bookings;
